@@ -1,0 +1,11 @@
+Boyer-Moore:
+  Build shift array.
+  Match last character, shift depending on shift array.
+  If we find a match return index - |p| - 1.
+  
+  Simple array or Matrix with values (doesn't always guarantee faster times)
+  
+Search algorithms:
+  Problema del puente couting sort.
+  
+  
