@@ -3,6 +3,7 @@
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.IOException;
 
@@ -14,14 +15,14 @@ class Main{
 
         //TODO: Change array for linkedList
         while((line = in.readLine()) != null){
-            StringTokenizer st = new StringTokenizer(line);
+            Scanner scanner = new Scanner(line);
             System.out.printf(line + "\n");
 
-            int[] pancakes = new int[st.countTokens()];
+            int[] pancakes = new int[line.split(" ").length];
 
-            //Populate pancake stack
-            for(int i = 0; i < pancakes.length; i++){
-                int diameter = Integer.parseInt(st.nextToken().trim());
+            //Populate pancake stack reversed to make computation logic easier
+            for(int i = pancakes.length - 1; i >= 0; i--){
+                int diameter = scanner.nextInt();
                 pancakes[i] = diameter;
             }
 
@@ -34,51 +35,58 @@ class Main{
     * Returns a String containing the instructions used to order the array
     */
     public static String order(int[] stack){
-        String output = ""; //Indicated no moves are needed.
-        int sortedElements = 0; //Indicates current number of correct elements
+        String output = ""; 	//Initialize with no moves
+        int begin = 0; 			//Indicates current number of correct elements
+		int end = stack.length - 1;
 
         while(!isSorted(stack)){
-            int flipIndex = maxInSubset(stack, sortedElements);
+            int flipIndex = maxInSubset(stack, begin);
 
             //If the maximum value is in the top position of the stack,
             //after flipping it will be in the correct position
-            if(flipIndex == stack.length - 1){
-                sortedElements++;
-            }else if(flipIndex == 0){
-                output += (sortedElements + 1) + " ";
-                flip(stack, sortedElements);
-                sortedElements++;
+			if(flipIndex == end){
+				//Flip max from top into correct position
+				flip(stack, begin);
+                output += (begin + 1) + " ";
+                begin++;
+            } else if(flipIndex == begin){
+                begin++;
             } else {
+				//Flip max to top
                 flip(stack, flipIndex);
                 output += (flipIndex + 1) + " ";
+				
+				//Flip max from top into correct position
+                flip(stack, begin);
+				output += (begin + 1) + " ";
+                begin++;
             }
         }
 
         //Last instruction is always 0
         output += "0\n";
-
         return output;
     }
 
     /*
-    * Reverse subset of array. Subset = [0, stack.length - index]
+    * Reverse subset of array. Subset = [0, stack.length - max]
     */
-    public static void flip(int[] stack, int index){
-        for(int i = 0; i < (stack.length - index) / 2; i++){
-            int temp = stack[i];
-            stack[i] = stack[stack.length - 1 - index - i];
-            stack[stack.length - 1 -index - i] = temp;
+    public static void flip(int[] stack, int beginIndex){
+        for(int i = 0; i < (stack.length - beginIndex) / 2; i++){
+            int temp = stack[i + beginIndex];
+            stack[i + beginIndex] = stack[stack.length - 1 - i];
+            stack[stack.length - 1 - i] = temp;
         }
     }
 
     /*
     * Returns the index of the maximum value in subset
     */
-    public static int maxInSubset(int[] stack, int position){
+    public static int maxInSubset(int[] stack, int beginIndex){
         int maximum = -1;
         int index = -1;
 
-        for(int i = 0; i < stack.length - position; i++){
+        for(int i = beginIndex; i < stack.length; i++){
             if(stack[i] > maximum){
                 maximum = stack[i];
                 index = i;
@@ -89,13 +97,13 @@ class Main{
     }
 
     /*
-    * Return true is stack is ordered from lowest to highest
+    * Return true is stack is ordered from highest to lowest
     */
     public static boolean isSorted(int[] stack){
         boolean sorted = true;
         if(stack.length == 1) return sorted;
         for(int i = 0; i < stack.length - 1; i++){
-            if(stack[i] > stack[i+1]){
+            if(stack[i] < stack[i+1]){
                 sorted = false;
                 break;
             }
