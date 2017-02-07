@@ -1,5 +1,6 @@
 /**
  * Created by Connor on 06/02/2017.
+ * Accepted with time: 0.440s
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
