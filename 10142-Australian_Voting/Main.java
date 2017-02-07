@@ -113,7 +113,6 @@ public class Main{
 	}
 }
 
-
 class Vote{
 	private List<Integer> priority;
 
