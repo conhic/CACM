@@ -1,12 +1,12 @@
- /**
- * Created by Connor on 06/02/2017.
- * Accepted with time: 0.120
- */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.io.IOException;
 
+ /**
+ * Created by Connor on 06/02/2017.
+ * Accepted with time: 0.120
+ */
 class Main{
 
     public static void main(String[] args) throws IOException{
