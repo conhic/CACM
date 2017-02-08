@@ -6,7 +6,7 @@ import java.util.*;
  * Accepted with time: 0.200
  */
 
-class Main{
+class Main2{
 
     /*
     * Uses the counting sort implementation
@@ -121,17 +121,17 @@ class Main{
     }
 
     public static void main(String[]args) throws IOException{
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	
-        int cases = Integer.parseInt(in.readLine());
+        Scanner scan = new Scanner(System.in);
+
+        int cases = scan.nextInt();
+        scan.nextLine();
 
         for(int i = 0; i < cases; i++){
-			in.readLine();
-            int people = Integer.parseInt(in.readLine());
+            int people = scan.nextInt();
             int[] peopleTimes = new int[people];
 
             for(int j = 0; j < peopleTimes.length; j++){
-                peopleTimes[j] = Integer.parseInt(in.readLine());
+                peopleTimes[j] = scan.nextInt();
             }
 
             peopleTimes = order(peopleTimes);
