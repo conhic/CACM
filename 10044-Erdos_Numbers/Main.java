@@ -66,7 +66,6 @@ class Main{
 
         int numScenarios = Integer.parseInt(in.readLine().trim());
         for(int i = 0; i < numScenarios; i++){
-            //Scanner scanner = new Scanner(in.readLine().trim());
             String[] numberLine = in.readLine().split(" ");
 	    int numArticles = Integer.parseInt(numberLine[0]);
             int numAuthors = Integer.parseInt(numberLine[1]);
