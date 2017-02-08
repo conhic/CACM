@@ -14,7 +14,6 @@ class Main{
 
         int cases = Integer.parseInt(in.readLine());
         for(int i = 0; i < cases; i++){
-            //Scanner scanner = new Scanner(in.readLine());
             String[] line = in.readLine().split(" ");
 
             int numRelatives = Integer.parseInt(line[0]);
@@ -23,7 +22,6 @@ class Main{
                 relatives[j] = Integer.parseInt(line[j + 1]);
             }
 
-            //order(relatives);     //CountingSort was removed. java.util sorting was 0.020s faster
             Arrays.sort(relatives);
             int mediana = relatives[numRelatives / 2];
             int distance = 0;
