@@ -3,7 +3,7 @@ import java.util.*;
 
 /**
  * Created by Connor on 07/02/2017.
- * Accepted with time: 0.100
+ * Accepted with time: 0.060
  */
 
 class Main{
