@@ -56,18 +56,18 @@ class Main{
     */
     public static void calculate(int[] peopleTimes){
         int totalTime = 0;
-        String output = "";
+        StringBuilder output = new StringBuilder();
 
         if(peopleTimes.length <= 3){
             if(peopleTimes.length == 1){
-                output += peopleTimes[0];
+                output.append(peopleTimes[0]);
                 totalTime += peopleTimes[0];
             } else if (peopleTimes.length == 2){
-                output += peopleTimes[0] + " " + peopleTimes[1];
+                output.append(peopleTimes[0] + " " + peopleTimes[1]);
                 totalTime += peopleTimes[1];
             } else {
-                output += peopleTimes[0] + " " + peopleTimes[1] + "\n" +
-                        peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2];
+                output.append(	peopleTimes[0] + " " + peopleTimes[1] + "\n" +
+								peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
                 totalTime += peopleTimes[1] + peopleTimes[0] + peopleTimes[2];
             }
         } else {
@@ -90,34 +90,34 @@ class Main{
 
                 if(algorithmOne > algorithmTwo){
                     totalTime += algorithmTwo;
-                    output += 	fastOne + " " + slowOne + "\n" +
-                            fastOne + "\n" +
-                            fastOne + " " + slowTwo + "\n" +
-                            fastOne + "\n";
+                    output.append( 	fastOne + " " + slowOne + "\n" +
+									fastOne + "\n" +
+									fastOne + " " + slowTwo + "\n" +
+									fastOne + "\n");
                 } else {
                     totalTime += algorithmOne;
-                    output +=	fastOne + " " + fastTwo + "\n" +
-                            fastOne + "\n" +
-                            slowTwo + " " + slowOne + "\n" +
-                            fastTwo + "\n";
+                    output.append(	fastOne + " " + fastTwo + "\n" +
+									fastOne + "\n" +
+									slowTwo + " " + slowOne + "\n" +
+									fastTwo + "\n");
                 }
             }
 
             if(peopleTimes.length - i - 3 == 0){
-                output += peopleTimes[0] + " " + peopleTimes[1] + "\n" +
-                        peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2];
+                output.append(	peopleTimes[0] + " " + peopleTimes[1] + "\n" +
+								peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
                 totalTime += peopleTimes[1] + peopleTimes[0] + peopleTimes[2];
             } else if(peopleTimes.length - i - 2 == 0){
-                output += fastOne + " " + fastTwo;
+                output.append(fastOne + " " + fastTwo);
                 totalTime += fastTwo;
             } else {
-                output += fastOne;
+                output.append(fastOne);
                 totalTime += fastOne;
             }
         }
 
         System.out.printf("%d\n",totalTime);
-        System.out.printf("%s\n",output);
+        System.out.printf("%s\n",output.toString());
     }
 
     public static void main(String[]args) throws IOException{
