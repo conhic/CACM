@@ -1,0 +1,15 @@
+Never compare real numbers with ==
+fabs(a - b) < e  where e ~ 10^-10/15 depending on our needs
+REMEMBER: (a + b) + c != a + (b + c)
+
+Learn transformations:
+  Avoid overflows.
+  
+  example:
+	  we have logA and logB
+	  we want log(A + B)
+	  
+	  log(A + B) = log(e^log A + e^log B) //this could overflow
+	  
+	  log(A + B) = log A + log(1 + e^(logB - logA)) //if A > B
+				 = log B + log(1 + e^(logA - logB)) //if B > A
