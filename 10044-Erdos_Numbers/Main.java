@@ -7,7 +7,6 @@ import java.io.IOException;
  * Created by Connor on 07/02/2017.
  * Accepted with time: 0.560s
  */
-
 class Main{
     static Map<String, Author> authors = new HashMap<>();
     static List<String> pendingResultAuthors = new ArrayList<>();
