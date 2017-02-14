@@ -67,7 +67,7 @@ class Main{
                 totalTime += peopleTimes[1];
             } else {
                 output.append(	peopleTimes[0] + " " + peopleTimes[1] + "\n" +
-								peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
+                                peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
                 totalTime += peopleTimes[1] + peopleTimes[0] + peopleTimes[2];
             }
         } else {
@@ -91,21 +91,21 @@ class Main{
                 if(algorithmOne > algorithmTwo){
                     totalTime += algorithmTwo;
                     output.append( 	fastOne + " " + slowOne + "\n" +
-									fastOne + "\n" +
-									fastOne + " " + slowTwo + "\n" +
-									fastOne + "\n");
+                                    fastOne + "\n" +
+                                    fastOne + " " + slowTwo + "\n" +
+                                    fastOne + "\n");
                 } else {
                     totalTime += algorithmOne;
-                    output.append(	fastOne + " " + fastTwo + "\n" +
-									fastOne + "\n" +
-									slowTwo + " " + slowOne + "\n" +
-									fastTwo + "\n");
+                    output.append(  fastOne + " " + fastTwo + "\n" +
+                                    fastOne + "\n" +
+                                    slowTwo + " " + slowOne + "\n" +
+                                    fastTwo + "\n");
                 }
             }
 
             if(peopleTimes.length - i - 3 == 0){
                 output.append(	peopleTimes[0] + " " + peopleTimes[1] + "\n" +
-								peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
+                                peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
                 totalTime += peopleTimes[1] + peopleTimes[0] + peopleTimes[2];
             } else if(peopleTimes.length - i - 2 == 0){
                 output.append(fastOne + " " + fastTwo);
@@ -121,12 +121,12 @@ class Main{
     }
 
     public static void main(String[]args) throws IOException{
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	
         int cases = Integer.parseInt(in.readLine());
 
         for(int i = 0; i < cases; i++){
-			in.readLine();
+            in.readLine();
             int people = Integer.parseInt(in.readLine());
             int[] peopleTimes = new int[people];
 
