@@ -4,6 +4,7 @@ import java.io.*;
  * Created by Connor on 14/02/2017.
  * Accepted with time: 0.080 
  */
+
 class Main{
 
     public static int compare(int a, int b, int c, int d){
