@@ -67,7 +67,7 @@ class Main{
         int numScenarios = Integer.parseInt(in.readLine().trim());
         for(int i = 0; i < numScenarios; i++){
             String[] numberLine = in.readLine().split(" ");
-	    int numArticles = Integer.parseInt(numberLine[0]);
+            int numArticles = Integer.parseInt(numberLine[0]);
             int numAuthors = Integer.parseInt(numberLine[1]);
 
             for(int j = 0; j < numArticles; j++){
