@@ -104,7 +104,7 @@ class Main{
             }
 
             if(peopleTimes.length - i - 3 == 0){
-                output.append(	peopleTimes[0] + " " + peopleTimes[1] + "\n" +
+                output.append(  peopleTimes[0] + " " + peopleTimes[1] + "\n" +
                                 peopleTimes[0] + "\n" + peopleTimes[0] + " " + peopleTimes[2]);
                 totalTime += peopleTimes[1] + peopleTimes[0] + peopleTimes[2];
             } else if(peopleTimes.length - i - 2 == 0){
