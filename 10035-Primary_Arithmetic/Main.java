@@ -5,6 +5,7 @@ import java.io.*;
  * Created by Connor on 07/02/2017.
  * Accepted with time: 0.130
  */
+
 class Main{
 	
     public static int calculateCarry(int a, int b){
