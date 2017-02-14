@@ -4,6 +4,7 @@ import java.io.*;
  * Created by Connor on 13/02/2017.
  * Accepted with time: 0.040
  */
+
 class Main{
 	
     public static int calculate(long number){
