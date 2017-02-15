@@ -1,8 +1,10 @@
 import java.io.*;
+import java.util.*;
 import java.math.BigInteger;
 
 /**
  * Created by Connor on 15/02/2017.
+ * Accepted with time: 0.50
  */
 class Main{
 
@@ -19,7 +21,7 @@ class Main{
         StringBuilder output = new StringBuilder();
         String line;
 
-        BigInteger[] fibs = new BigInteger[600];
+        BigInteger[] fibs = new BigInteger[480];
         precalculateFib(fibs);
         BigInteger beginning, end;
 
@@ -28,24 +30,24 @@ class Main{
             beginning = new BigInteger(limits[0]);
             end = new BigInteger(limits[1]);
             int count = 0;
+            
+            int startIndex = Arrays.binarySearch(fibs, 1, fibs.length, beginning);
+            int endIndex = Arrays.binarySearch(fibs, 1, fibs.length, end);
 
-            
-            for(int i = 1; i < fibs.length; i++){
-                if(fibs[i].compareTo(beginning) >= 0 && fibs[i].compareTo(end) <= 0){
-                    count++;
-                }
-            }
-            
-            while(!found){
-                int minComp;
-                minComp = beginning.compareTo(fibs[min]);
-                if(beginning.compareTo(fibs[min]) == 0 || (minComp < 0 && beginning.compareTo[min+1] > 0){
-                    found = true;
-                }
-            }
-            
+            if((startIndex == endIndex) && startIndex < 0){
+                output.append("0\n");
+            } else {
+                if( startIndex < 0){
+                    startIndex = ((startIndex + 1) * -1);
 
-            output.append(count + "\n");
+                }
+
+                if( endIndex < 0){
+                    endIndex = ((endIndex + 2) * -1);
+                }
+
+                output.append(endIndex - startIndex + 1 + "\n");
+            }
         }
 
         System.out.printf(output.toString());
