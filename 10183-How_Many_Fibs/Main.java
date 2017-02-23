@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /**
  * Created by Connor on 15/02/2017.
- * Accepted with time: 0.50
+ * Accepted with time: 0.050
  */
 class Main{
 
